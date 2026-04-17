@@ -74,7 +74,6 @@
         .tonal-transition-no-border { position: relative; }
         .tonal-transition-no-border::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(0,0,0,0.05), transparent); }
 
-        /* WhatsApp pulse */
         @keyframes pulse-ring {
             0% { transform: scale(0.8); opacity: 0.5; }
             100% { transform: scale(1.6); opacity: 0; }
@@ -89,7 +88,6 @@
             z-index: -1;
         }
 
-        /* Lightbox */
         .lightbox-overlay {
             position: fixed; inset: 0; background: rgba(0,0,0,0.9); z-index: 9999;
             display: none; align-items: center; justify-content: center;
@@ -116,22 +114,31 @@
         }
         .lightbox-close:hover { background: rgba(255,255,255,0.3); }
 
-        /* Smooth scroll */
         html { scroll-behavior: smooth; }
 
-        /* Nav dropdown */
         .nav-dropdown { display: none; position: absolute; top: 100%; left: 0; min-width: 260px; }
         .nav-dropdown-trigger:hover .nav-dropdown { display: block; }
 
-        /* Mobile menu */
         .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
         .mobile-menu.open { max-height: 600px; }
 
-        /* Masonry */
         .gallery-grid { columns: 3; column-gap: 1rem; }
         .gallery-grid > div { break-inside: avoid; margin-bottom: 1rem; }
         @media (max-width: 768px) { .gallery-grid { columns: 2; } }
         @media (max-width: 480px) { .gallery-grid { columns: 1; } }
+
+        /* AC Services new section blob */
+        .ac-blob {
+            position: absolute;
+            width: 85%;
+            height: 85%;
+            background: linear-gradient(135deg, #c9d8f5 0%, #ddd6f3 50%, #e8d5f5 100%);
+            border-radius: 60% 40% 55% 45% / 45% 55% 45% 55%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
     </style>
 </head>
 <body class="text-on-surface">
@@ -381,41 +388,45 @@
             <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">We deliver engineering excellence across all residential and commercial air conditioning and appliance systems.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Service 1 -->
-            <div class="group bg-surface-container-lowest p-8 rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
-                <div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-6">
-                    <span class="material-symbols-outlined text-3xl">contract</span>
+            <div class="group bg-surface-container-lowest rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1 overflow-hidden">
+                <div class="w-full h-52 overflow-hidden">
+                    <img src="images/serv-1.jpg" alt="Maintenance Contract" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-3">Maintenance Contract</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Ramiz Hafeez A/C Unit Fix Contracting are trained to provide the highest level in maintenance services on the base of Annual Contract.</p>
-                <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="maintenance-contract.html">Read More →</a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-primary text-xl font-bold headline-font mb-3">Maintenance Contract</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Ramiz Hafeez A/C Unit Fix Contracting are trained to provide the highest level in maintenance services on the base of Annual Contract.</p>
+                    <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="maintenance-contract.html">Read More →</a>
+                </div>
             </div>
-            <!-- Service 2 -->
-            <div class="group bg-surface-container-lowest p-8 rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
-                <div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-6">
-                    <span class="material-symbols-outlined text-3xl">hvac</span>
+            <div class="group bg-surface-container-lowest rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1 overflow-hidden">
+                <div class="w-full h-52 overflow-hidden">
+                    <img src="images/serv-2.jpg" alt="Split and VRV AC Installation" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-3">Split and VRV AC Installation</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">We undertake AC installation work for different AC manufacturers. Our AC installation service is highly diverse, catering for a range of commercial as well as residential AC units.</p>
-                <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="split-vrv-installation.html">Read More →</a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-primary text-xl font-bold headline-font mb-3">Split and VRV AC Installation</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">We undertake AC installation work for different AC manufacturers. Our AC installation service is highly diverse, catering for a range of commercial as well as residential AC units.</p>
+                    <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="split-vrv-installation.html">Read More →</a>
+                </div>
             </div>
-            <!-- Service 3 -->
-            <div class="group bg-surface-container-lowest p-8 rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
-                <div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-6">
-                    <span class="material-symbols-outlined text-3xl">build</span>
+            <div class="group bg-surface-container-lowest rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1 overflow-hidden">
+                <div class="w-full h-52 overflow-hidden">
+                    <img src="images/repair1.jpg" alt="Residential AC and Split AC Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-3">Residential AC and Split AC Repair</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Split AC Installation is made from two important parts: the indoor unit and the outdoor unit. We offer affordable, eco-friendly repair solutions.</p>
-                <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="residential-ac-repair.html">Read More →</a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-primary text-xl font-bold headline-font mb-3">Residential AC and Split AC Repair</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Split AC Installation is made from two important parts: the indoor unit and the outdoor unit. We offer affordable, eco-friendly repair solutions.</p>
+                    <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="residential-ac-repair.html">Read More →</a>
+                </div>
             </div>
-            <!-- Service 4 -->
-            <div class="group bg-surface-container-lowest p-8 rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1">
-                <div class="w-14 h-14 rounded-xl bg-surface-container-low flex items-center justify-center text-secondary mb-6">
-                    <span class="material-symbols-outlined text-3xl">home_repair_service</span>
+            <div class="group bg-surface-container-lowest rounded-xl shadow-ambient hover:shadow-ambient-lg transition-all duration-300 flex flex-col h-full hover:-translate-y-1 overflow-hidden">
+                <div class="w-full h-52 overflow-hidden">
+                    <img src="images/appliance.png" alt="Home Appliance and Repair" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
                 </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-3">Home Appliance and Repair</h3>
-                <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Our technicians are conversant in dealing with all kinds of home appliances — from minor problems to bigger issues.</p>
-                <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="home-appliance-repair.html">Read More →</a>
+                <div class="p-8 flex flex-col flex-grow">
+                    <h3 class="text-primary text-xl font-bold headline-font mb-3">Home Appliance and Repair</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed mb-6 flex-grow">Our technicians are conversant in dealing with all kinds of home appliances — from minor problems to bigger issues.</p>
+                    <a class="text-secondary text-sm font-bold flex items-center gap-2 hover:gap-3 transition-all" href="home-appliance-repair.html">Read More →</a>
+                </div>
             </div>
         </div>
     </div>
@@ -435,35 +446,59 @@
             <img src="images/lenoxnew.png" alt="Lennox" class="h-12 w-auto object-contain"/>
             <img src="images/samsungpng.png" alt="Samsung" class="h-12 w-auto object-contain"/>
             <img src="images/Daikin_logo.png" alt="Daikin" class="h-12 w-auto object-contain"/>
+            <img src="images/bluestarlogo.png" alt="Blue Star" class="h-12 w-auto object-contain"/>
+            <img src="images/eros.jpg" alt="Eros" class="h-12 w-auto object-contain"/>
+            <img src="images/hisense-seeklogo.png" alt="Hisense" class="h-12 w-auto object-contain"/>
         </div>
     </div>
 </section>
 
-<!-- Section 8: Air Conditioning Services -->
+<!-- Section 8: Air Conditioning Services (NEW two-column layout) -->
 <section class="py-24 bg-surface-container-lowest" id="ac-services">
     <div class="max-w-7xl mx-auto px-8">
-        <h2 class="text-center text-primary text-4xl font-bold headline-font mb-16">Air Conditioning Services</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="text-center group">
-                <div class="w-20 h-20 mx-auto mb-8 bg-surface-container flex items-center justify-center rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <span class="material-symbols-outlined text-4xl">settings_suggest</span>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Left: Title + Service List -->
+            <div>
+                <h2 class="text-primary text-4xl md:text-5xl font-bold headline-font leading-tight mb-12">
+                    Air Conditioning<br/>Services
+                </h2>
+                <div class="space-y-10">
+                    <!-- Service Item 1 -->
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 rounded-full bg-[#2BBFA4] flex items-center justify-center flex-shrink-0 shadow-md">
+                            <img src="images/sec8-icon1.png" alt="AC Installation Icon" class="object-contain"/>
+                        </div>
+                        <div>
+                            <h3 class="text-primary text-lg font-bold headline-font mb-2">Air Conditioning Installation</h3>
+                            <p class="text-on-surface-variant leading-relaxed">AC Installation Services in UAE is one of our specialty. We provide professional installation for all types and brands of air conditioning systems.</p>
+                        </div>
+                    </div>
+                    <!-- Service Item 2 -->
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 rounded-full bg-[#2BBFA4] flex items-center justify-center flex-shrink-0 shadow-md">
+                            <img src="images/sec8-icon2.png" alt="AC Repair Icon" class="object-contain"/>
+                        </div>
+                        <div>
+                            <h3 class="text-primary text-lg font-bold headline-font mb-2">Air Conditioning Repair</h3>
+                            <p class="text-on-surface-variant leading-relaxed">We are the leading air conditioner company in UAE for best AC repair services. Fast, reliable repair for all residential and commercial units.</p>
+                        </div>
+                    </div>
+                    <!-- Service Item 3 -->
+                    <div class="flex items-start gap-5">
+                        <div class="w-16 h-16 rounded-full bg-[#2BBFA4] flex items-center justify-center flex-shrink-0 shadow-md">
+                            <img src="images/sec8-icon3.png" alt="Preventative Maintenance Icon" class="object-contain"/>
+                        </div>
+                        <div>
+                            <h3 class="text-primary text-lg font-bold headline-font mb-2">Preventative Maintenance</h3>
+                            <p class="text-on-surface-variant leading-relaxed">Air conditioning preventative maintenance is an essential service because it keeps your home at a nice and cool temperature year-round.</p>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-4">Air Conditioning Installation</h3>
-                <p class="text-on-surface-variant leading-relaxed">Professional installation of all types and brands of air conditioning systems for residential and commercial spaces.</p>
             </div>
-            <div class="text-center group">
-                <div class="w-20 h-20 mx-auto mb-8 bg-surface-container flex items-center justify-center rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <span class="material-symbols-outlined text-4xl">build</span>
-                </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-4">Air Conditioning Repair</h3>
-                <p class="text-on-surface-variant leading-relaxed">Fast, reliable repair for all residential and commercial units. Our technicians diagnose and fix issues quickly.</p>
-            </div>
-            <div class="text-center group">
-                <div class="w-20 h-20 mx-auto mb-8 bg-surface-container flex items-center justify-center rounded-full text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                    <span class="material-symbols-outlined text-4xl">event_repeat</span>
-                </div>
-                <h3 class="text-primary text-xl font-bold headline-font mb-4">Preventative Maintenance</h3>
-                <p class="text-on-surface-variant leading-relaxed">Scheduled maintenance to keep your system running at peak efficiency, reducing energy costs and extending equipment life.</p>
+            <!-- Right: AC Unit Image with blob background -->
+            <div class="relative flex items-center justify-center min-h-[420px]">
+                <div class="ac-blob"></div>
+                <img src="images/sec8-img.png" alt="Air Conditioning Unit" class="relative z-10 w-full max-w-md object-contain drop-shadow-2xl"/>
             </div>
         </div>
     </div>
@@ -543,7 +578,6 @@
 </footer>
 
 <script>
-    // Navbar scroll effect
     window.addEventListener('scroll', function() {
         const nav = document.getElementById('main-nav');
         if (window.scrollY > 50) {
@@ -555,12 +589,10 @@
         }
     });
 
-    // Mobile menu toggle
     function toggleMobileMenu() {
         document.getElementById('mobile-menu').classList.toggle('open');
     }
 
-    // Lightbox
     const galleryImages = [
         'images/gallery2.jpg', 'images/gallery5.jpg', 'images/gallery9.jpg',
         'images/gallery10.jpg', 'images/gallery12.jpg', 'images/7.jpg'
